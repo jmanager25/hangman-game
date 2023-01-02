@@ -31,10 +31,10 @@ Hangman Game is a guessing game written with python and that runs on a terminal.
 
 * [Deployment]
 
-* [Credits]
-    * [Code Used]
-    * [Content]
-    * [Media]
+* [Credits](#credits)
+    * [Code Used](#code-used)
+    * [Content](#content)
+    * [Media](#media)
 
 * [Acknowledgments]
 
@@ -58,6 +58,22 @@ If the player input an invalid character, an error message is displayed and is a
 Overall, The users wants a fun and enjoyable game that can provide entertainment and mental exercise. 
 
 ### Flowchart Diagram
+
+
+
+
+
+## Credits
+
+### Code Used
+
+* [Code to allow only letters when taking user input](https://bobbyhadz.com/blog/python-input-only-letters-allowed)
+
+### Content
+
+
+### Media 
+
 
 
 
