@@ -40,6 +40,11 @@ to the test? Let's get started!\n
         return player_name
     
 
-def get_words()
+def main():
+    """
+    Contains all the functions of the game
+    """
+    start_game()
 
-start_game()
+
+main()
