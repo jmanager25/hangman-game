@@ -38,6 +38,15 @@ to the test? Let's get started!\n
                 )
         
         return player_name
+
+
+def get_words():
+    """
+    Selects a ramdom word from the list of words provided.
+    The words are returned in uppercase.
+    """
+    random_word = random.choice(words)
+    return random_word.upper()
     
 
 def main():
@@ -45,6 +54,7 @@ def main():
     Contains all the functions of the game
     """
     start_game()
+    get_words()
 
 
 main()
