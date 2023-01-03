@@ -14,17 +14,10 @@ words = [
 
 def start_game():
     """
-    Welcomes the player to the game, asks their name and gives them the 
-    choice to play the game or read the rules
+    Welcomes the player to the game, and asks them to
+    input their name.
     """
-    print(
-        """
-        Welcome to the Hangman Game! In this classic word guessing 
-        game, you will try to guess a secret word by inputing letters 
-        or word. You have 5 attempts to try to find the correct word.\n
-        Are you ready to put your vocabulary and problem solving skills
-        to the test? Let's get started!\n
-        """)
+    print("WELCOME TO THE HANGMAN GAME!\n")
 
     player_name = ""
 
@@ -35,7 +28,18 @@ def start_game():
             print("Your name must contain only letters\n")
             continue
         else:
-            break
+            print(
+                f"""\nHi there {player_name}! in this classic word guessing 
+game, you will try to guess a secret word by inputing letters 
+or word. You have 5 attempts to try to find the correct word.\n
+Are you ready to put your vocabulary and problem solving skills
+to the test? Let's get started!\n
+                """
+                )
+        
+        return player_name
     
+
+def get_words()
 
 start_game()
