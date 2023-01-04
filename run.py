@@ -49,21 +49,32 @@ def get_words():
     return random_word.upper()
 
 
+def get_player_input():
+    """
+    Allows the player to input the letter or word into
+    the terminal.
+    """
+    player_guess = input("Please enter a letter:\n")
+
+    return player_guess.upper()
+
+
+"""
 def hangman_draw():
-    """
-    Draws the hangman graphics to be displayed if the
-    player guess wrong the letter or word.
-    """
+
+   # Draws the hangman graphics to be displayed if the
+    #player guess wrong the letter or word.
+
     if wrong_attempt == 0:
-        print("==========        ")
-        print("||       |        ")
+        print(" ==========        ")
+        print("||                ")
         print("||                ")
         print("||                ")
         print("||                ")
         print("||                ")
         print("||                ")
     elif wrong_attempt == 1:
-        print("==========        ")
+        print(" ==========        ")
         print("||       |        ")
         print("||                ")
         print("||                ")
@@ -71,7 +82,7 @@ def hangman_draw():
         print("||                ")
         print("||                ")
     elif wrong_attempt == 2:
-        print("==========        ")
+        print(" ==========        ")
         print("||       |        ")
         print("||       0        ")
         print("||                ")
@@ -79,7 +90,7 @@ def hangman_draw():
         print("||                ")
         print("||                ")
     elif wrong_attempt == 3:
-        print("==========        ")
+        print(" ==========        ")
         print("||       |        ")
         print("||       0        ")
         print("||      /|        ")
@@ -87,7 +98,7 @@ def hangman_draw():
         print("||                ")
         print("||                ")
     elif wrong_attempt == 4:
-        print("==========        ")
+        print(" =========        ")
         print("||       |        ")
         print("||       0        ")
         print("||      /|\       ")
@@ -95,7 +106,7 @@ def hangman_draw():
         print("||                ")
         print("||                ")
     elif wrong_attempt == 5:
-        print("==========        ")
+        print(" ==========        ")
         print("||       |        ")
         print("||       0        ")
         print("||      /|\       ")
@@ -103,13 +114,14 @@ def hangman_draw():
         print("||                ")
         print("||                ")
     else wrong_attempt == 6:
-        print("==========        ")
+        print(" ==========        ")
         print("||       |        ")
         print("||       0        ")
         print("||      /|\       ")
-        print("||      / \        ")
+        print("||      / \       ")
         print("||                ")
         print("||                ")
+"""
 
 
 def main():
@@ -118,7 +130,7 @@ def main():
     """  
     start_game()
     get_words()
-    hangman_draw()
+    get_player_input()
 
 
 main()
