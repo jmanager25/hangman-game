@@ -31,7 +31,7 @@ def start_game():
             print(
                 f"""\nHi there {player_name}! in this classic word guessing 
 game, you will try to guess a secret word by inputing letters 
-or word. You have 5 attempts to try to find the correct word.\n
+or word. You have 6 attempts to try to find the correct word.\n
 Are you ready to put your vocabulary and problem solving skills
 to the test? Let's get started!\n
                 """
@@ -47,14 +47,78 @@ def get_words():
     """
     random_word = random.choice(words)
     return random_word.upper()
-    
+
+
+def hangman_draw():
+    """
+    Draws the hangman graphics to be displayed if the
+    player guess wrong the letter or word.
+    """
+    if wrong_attempt == 0:
+        print("==========        ")
+        print("||       |        ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif wrong_attempt == 1:
+        print("==========        ")
+        print("||       |        ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif wrong_attempt == 2:
+        print("==========        ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif wrong_attempt == 3:
+        print("==========        ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||      /|        ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif wrong_attempt == 4:
+        print("==========        ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||      /|\       ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif wrong_attempt == 5:
+        print("==========        ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||      /|\       ")
+        print("||      /         ")
+        print("||                ")
+        print("||                ")
+    else wrong_attempt == 6:
+        print("==========        ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||      /|\       ")
+        print("||      / \        ")
+        print("||                ")
+        print("||                ")
+
 
 def main():
     """
     Contains all the functions of the game
-    """
+    """  
     start_game()
     get_words()
+    hangman_draw()
 
 
 main()
