@@ -59,8 +59,7 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 
 ### Flowchart Diagram
 
-
-
+![FlowChart Diagram](assets/images/FlowChart.jpeg)
 
 
 ## Credits

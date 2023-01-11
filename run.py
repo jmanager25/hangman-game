@@ -73,7 +73,8 @@ def validate_guess(player_guess, random_word):
         elif len(player_guess) > 1:
             if len(player_guess) != len(random_word):
                 raise ValueError(
-                f"Please enter a valid letter or word of the correct lenght. The word contains {len(random_word)} letters."
+                    f"""Please enter a valid letter or word of the correct lenght. 
+                the word contains {len(random_word)} letters."""
                 )
             else:
                 if player_guess in guessed_letters:
