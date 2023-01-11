@@ -49,42 +49,37 @@ def get_words():
     return random_word.upper()
 
 
-def get_player_input():
+def get_player_input(random_word, guessed_letters):
     """
     Allows the player to input the letter or word into
     the terminal.
     """
-    player_guess = input("Please enter a letter:\n")
-
-    return player_guess.upper()
-
-
-def validate_guess(player_guess, random_word):
-    """
-    Raises ValueError if the player guess is not a letter, if the 
-    lenght of the player guess in more than random word and if the 
-    word is already guessed.
-    """
-    guessed_letters = []
-    try:
-        if not player_guess.isalpha():
-            raise ValueError(
-                f"please enter a valid letter, you have entered {player_guess}"
-            )
-        elif len(player_guess) > 1:
-            if len(player_guess) != len(random_word):
+    while True:
+        player_guess = input("Please enter a letter:\n").upper()
+        try:
+            if not player_guess.isalpha():
                 raise ValueError(
-                    f"""Please enter a valid letter or word of the correct 
-                    lenght. The word contains {len(random_word)} letters."""
+                    f"""please enter a valid letter, you have
+                    entered {player_guess}"""
                 )
-            else:
-                if player_guess in guessed_letters:
+            elif len(player_guess) > 1:
+                if len(player_guess) != len(random_word):
                     raise ValueError(
-                        f"You already guessed {player_guess}"
+                        f"""Please enter a valid letter or word 
+                        of the correct lenght. The word contains 
+                        {player_guess} letters."""
                     )
-    except ValueError as e:
-        print(e)
+            elif player_guess in guessed_letters:
+                raise ValueError(
+                    f"You already guessed {player_guess}"
+                )
+            break
+        except ValueError as e:
+            print(e)
     return player_guess
+    
+
+
 
 
 """
@@ -159,7 +154,6 @@ def main():
     start_game()
     get_words()
     get_player_input()
-    validate_guess(get_player_input(), get_words())
 
 
 main()
