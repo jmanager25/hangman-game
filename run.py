@@ -52,7 +52,8 @@ def get_words():
 def get_player_input(random_word, guessed_letters):
     """
     Allows the player to input the letter or word into
-    the terminal.
+    the terminal and also includes a try-except statement to
+    raise ValueErrors.
     """
     while True:
         player_guess = input("Please enter a letter:\n").upper()
@@ -79,6 +80,30 @@ def get_player_input(random_word, guessed_letters):
     return player_guess
     
 
+def play_game(random_word, player_guess):
+    """
+    Executes the main logic of the game. checks if the player's
+    input is in the secret word or not.
+    """
+    blank_space = "_" * len(random_word)
+    guessed_letters = []
+    attempts = 6 
+    while attempts > 0:
+        print("Attempts left: ", attempts)
+        print("Guessed letters: ", guessed_letters)
+        guessed_letters.append(player_guess)
+        print("Word: ", blank_space)
+
+    if player_guess in random_word:
+        new_blank_space = ""
+        for i in range(len(random_word)):
+            if random_word[i] == player_guess:
+                new_blank_space += blank_space
+            else:
+                new_blank_space += blank_space[i]
+        blank_space = new_blank_space
+    else:
+        attempts -= 1 
 
 
 
@@ -154,6 +179,7 @@ def main():
     start_game()
     get_words()
     get_player_input()
+    play_game()
 
 
 main()
