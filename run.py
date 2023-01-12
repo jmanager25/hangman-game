@@ -49,12 +49,13 @@ def get_words():
     return random_word.upper()
 
 
-def get_player_input(random_word, guessed_letters):
+def get_player_input(random_word):
     """
     Allows the player to input the letter or word into
     the terminal and also includes a try-except statement to
     raise ValueErrors.
     """
+    guessed_letters = []
     while True:
         player_guess = input("Please enter a letter:\n").upper()
         try:
@@ -105,6 +106,7 @@ def play_game(random_word, player_guess):
         blank_space = new_blank_space
     else:
         attempts -= 1 
+    return attempts
 
 
 def hangman_draw(attempts):
@@ -177,8 +179,8 @@ def main():
     """  
     start_game()
     get_words()
-    player_guess = get_player_input()
-    game_logic = play_game()
+    player_guess = get_player_input(get_words())
+    game_logic = play_game(get_words(), player_guess)
     hangman_draw(game_logic)
 
 
