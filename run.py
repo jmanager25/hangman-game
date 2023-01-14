@@ -2,6 +2,7 @@ import random
 import os
 from time import sleep
 from words import words
+import art
 
 
 def clear_terminal():
@@ -113,7 +114,7 @@ def play_game(random_word, player_Name):
             x in enumerate(blank_space)])
             if "_" not in blank_space:
                 print(f"Congratulations {player_Name}, YOU WIN!")
-                you_win()
+                art.you_win()
                 break
         elif len(player_guess) > 1:
             if player_guess != random_word:
@@ -122,7 +123,7 @@ def play_game(random_word, player_Name):
                 guessed_words.append(player_guess)
             else:
                 print(f"Congratulations, {player_guess} is the word, YOU WIN!")
-                you_win()
+                art.you_win()
                 break
         sleep(2)
         clear_terminal()
@@ -130,7 +131,7 @@ def play_game(random_word, player_Name):
         print(blank_space)
     if attempts == 0:
         print(f"Sorry {player_Name}, YOU LOSE!")
-        you_lose()
+        art.you_lose()
         
 
 def play_again(random_word, player_Name):
@@ -221,67 +222,11 @@ def hangman_draw(attempts):
         print("||                ")
 
 
-def introduction_art():
-    """
-    Display the welcome art
-    """
-    print(
-        """
-         _  _  ____  __     ___  __   _  _  ____ 
-        / )( \(  __)(  )   / __)/  \ ( \/ )(  __)
-        \ /\ / ) _) / (_/\( (__(  O )/ \/ \ ) _) 
-        (_/\_)(____)\____/ \___)\__/ \_)(_/(____)
-
-        ____  __     ____  _  _  ____       
-       (_  _)/  \   (_  _)/ )( \(  __)      
-         )( ( O  )    )(  ) __ ( ) _)       
-        (__) \__/    (__) \_)(_/(____)  
-
-         _  _   __   __ _   ___  _  _   __   __ _ 
-        / )( \ / _\ (  ( \ / __)( \/ ) / _\ (  ( \
-        ) __ (/    \/    /( (_ \/ \/ \/    \/    /
-        \_)(_/\_/\_/\_)__) \___/\_)(_/\_/\_/\_)__)
-
-         ___   __   _  _  ____ 
-        / __) / _\ ( \/ )(  __)
-       ( (_ \/    \/ \/ \ ) _) 
-        \___/\_/\_/\_)(_/(____)
-        """
-        )
-
-
-def you_win():
-    """
-    Display you win! art
-    """
-    print(
-        """
-         _  _  __   _  _    _  _  __  __ _  _   
-        ( \/ )/  \ / )( \  / )( \(  )(  ( \/ \  
-         )  /( O  )) \/ (  \ /\ / )( /    /\_/  
-        (__/  \__/ \____/  (_/\_)(__)\_)__)(_)  
-        """
-    )
-
-def you_lose():
-    """
-    Display you lose! art
-    """
-    print(
-        """
-         _  _  __   _  _    __     __   ____  ____  _   
-        ( \/ )/  \ / )( \  (  )   /  \ / ___)(  __)/ \  
-         )  /( O ) ) \/ (  / (_/\(  O )\___ \ ) _) \_/  
-        (__/  \__/ \____/  \____/ \__/ (____/(____)(_) 
-        """
-    )
-
-
 def main():
     """
     Contains all the functions of the game
     """  
-    introduction_art()
+    art.introduction_art()
     player_name = start_game()
     ramdom_words = get_words()
     play_game(ramdom_words, player_name)
