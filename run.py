@@ -85,7 +85,7 @@ def play_game(random_word, player_Name):
     blank_space = "_" * len(random_word)
     guessed_letters = []
     guessed_words = []
-    attempts = 6 
+    attempts = 7 
     game_over = False
     print(hangman_draw(attempts))
     print("Word: ", blank_space)
@@ -124,9 +124,17 @@ def hangman_draw(attempts):
     Draws the hangman graphics to be displayed if the
     player guess wrong the letter or word.
     """
-    if attempts == 6:
+    if attempts == 7:
         print(" ==========       ")
         print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif attempts == 6:
+        print(" ==========       ")
+        print("||       |        ")
         print("||                ")
         print("||                ")
         print("||                ")
@@ -135,7 +143,7 @@ def hangman_draw(attempts):
     elif attempts == 5:
         print(" ==========       ")
         print("||       |        ")
-        print("||                ")
+        print("||       0        ")
         print("||                ")
         print("||                ")
         print("||                ")
@@ -144,15 +152,7 @@ def hangman_draw(attempts):
         print(" ==========       ")
         print("||       |        ")
         print("||       0        ")
-        print("||                ")
-        print("||                ")
-        print("||                ")
-        print("||                ")
-    elif attempts == 3:
-        print(" ==========       ")
         print("||       |        ")
-        print("||       0        ")
-        print("||      /|        ")
         print("||                ")
         print("||                ")
         print("||                ")
