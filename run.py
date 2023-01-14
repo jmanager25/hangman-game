@@ -86,16 +86,15 @@ def play_game(random_word, player_Name):
     guessed_letters = []
     guessed_words = []
     attempts = 7 
-    game_over = False
     print(hangman_draw(attempts))
     print("Word: ", blank_space)
     while attempts > 0:
         player_guess = get_player_input(guessed_letters, guessed_words)
-        if player_guess not in random_word:
+        if len(player_guess) == 1 and player_guess not in random_word:
             print(f"{player_guess} is not in the word")
             attempts -= 1
             guessed_letters.append(player_guess)
-        elif player_guess in random_word:
+        elif len(player_guess) == 1 and player_guess in random_word:
             print(f"{player_guess} is in the word")
             guessed_letters.append(player_guess)
 
@@ -111,14 +110,21 @@ def play_game(random_word, player_Name):
             blank_space = "".join([random_word[i] if i in indices else x for i, 
             x in enumerate(blank_space)])
             if "_" not in blank_space:
-                game_over = True
                 print(f"Congratulations {player_Name}, YOU WIN!")
+                break
+        elif len(player_guess) > 1:
+            if player_guess != random_word:
+                print(f"{player_guess} is not the word")
+                attempts -= 1
+                guessed_words.append(player_guess)
+            else:
+                print(f"Congratulations, {player_guess} is the word, YOU WIN!")
                 break
         print(hangman_draw(attempts))
         print(blank_space)
     if attempts == 0:
         print(f"Sorry {player_Name}, YOU LOSE!")
-
+        
 
 def play_again(random_word, player_Name):
     """
@@ -126,7 +132,7 @@ def play_again(random_word, player_Name):
     the game if not exit the game.
     """
     while True:
-        restart_game = input("Do you want to play Again? (y/n\n").lower()
+        restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
             play_game(random_word, player_Name)
         elif restart_game == 'n':
@@ -204,7 +210,6 @@ def hangman_draw(attempts):
         print("||      / \       ")
         print("||                ")
         print("||                ")
-
 
 
 def main():
