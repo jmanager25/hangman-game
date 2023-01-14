@@ -133,6 +133,8 @@ def play_game(random_word, player_Name):
             else:
                 print(f"Congratulations, {player_guess} is the word, YOU WIN!")
                 break
+        sleep(2)
+        clear_terminal()
         print(hangman_draw(attempts))
         print(blank_space)
     if attempts == 0:
@@ -144,6 +146,8 @@ def play_again(random_word, player_Name):
     Gives the player the option to play Again. If they chose yes, restarts 
     the game if not exit the game.
     """
+    sleep(6)
+    clear_terminal()
     while True:
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
