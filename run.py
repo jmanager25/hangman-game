@@ -49,13 +49,12 @@ def get_words():
     return random_word.upper()
 
 
-def get_player_input(random_word):
+def get_player_input(random_word, guessed_letters):
     """
     Allows the player to input the letter or word into
     the terminal and also includes a try-except statement to
     raise ValueErrors.
     """
-    guessed_letters = []
     while True:
         player_guess = input("Please enter a letter:\n").upper()
         try:
@@ -65,12 +64,13 @@ def get_player_input(random_word):
                     entered {player_guess}"""
                 )
             elif len(player_guess) > 1:
-                if len(player_guess) != len(random_word):
+                if player_guess != random_word:
                     raise ValueError(
-                        f"""Please enter a valid letter or word 
-                        of the correct lenght. The word contains 
-                        {player_guess} letters."""
+                        f"""Wrong word, {player_guess} is not the word"""
                     )
+                else: 
+                    print(f"You Win! {player_guess} is the word")
+                    return
             elif player_guess in guessed_letters:
                 raise ValueError(
                     f"You already guessed {player_guess}"
@@ -81,14 +81,13 @@ def get_player_input(random_word):
     return player_guess
     
 
-def play_game(random_word, player_guess):
+def play_game(random_word):
     """
     Executes the main logic of the game. checks if the player's
     input is in the secret word or not.
     """
     blank_space = "_" * len(random_word)
     guessed_letters = []
-    guessed_words = []
     attempts = 6 
     while attempts > 0:
         print("Attempts left: ", attempts)
@@ -179,8 +178,8 @@ def main():
     """  
     start_game()
     get_words()
-    player_guess = get_player_input(get_words())
-    game_logic = play_game(get_words(), player_guess)
+    game_logic = play_game(get_words())
+    player_guess = get_player_input(get_words(), game_logic)
     hangman_draw(game_logic)
 
 
