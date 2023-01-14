@@ -15,28 +15,28 @@ Hangman Game is a guessing game written with python and that runs on a terminal.
         * [User Goals](#user-goals)
     * [Flowchart Diagram](#flowchart-diagram)
 
-* [Features]
-    * [Existing Features]
-    * [Future Features]
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Future Features](#future-features)
 
-* [Testing]
-    * [Manual Testing]
-    * [Validator]
+* [Testing](#testing)
+    * [Manual Testing](#manual-testing)
+    * [Validator](#validator)
 
-* [Technologies Used]
+* [Technologies Used](#technologies-used)
 
-* [Bugs]
-    * [Fixed Bugs]
-    * [Unfixed Bugs]
+* [Bugs](#bugs)
+    * [Fixed Bugs](#fixed-bugs)
+    * [Unfixed Bugs](#unfixed-bugs)
 
-* [Deployment]
+* [Deployment](#deployment)
 
 * [Credits](#credits)
     * [Code Used](#code-used)
     * [Content](#content)
     * [Media](#media)
 
-* [Acknowledgments]
+* [Acknowledgments](#acknowledgments)
 
 ## How To Play 
 
@@ -62,6 +62,28 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 ![FlowChart Diagram](assets/images/FlowChart.jpeg)
 
 
+## Features
+
+### Existing Features
+
+### Future Features
+
+## Testing
+
+### Manual Testing
+
+### Validator
+
+## Technologies Used
+
+## Bugs
+
+### Fixed Bugs
+
+### Unfixed Bugs
+
+## Deployment
+
 ## Credits
 
 ### Code Used
@@ -74,8 +96,9 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 
 ### Content
 
-
 ### Media 
+
+## Acknowledgments
 
 
 
