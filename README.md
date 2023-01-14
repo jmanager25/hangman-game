@@ -67,6 +67,9 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 ### Code Used
 
 * [Code to allow only letters when taking user input](https://bobbyhadz.com/blog/python-input-only-letters-allowed)
+* [Python list comprehension](https://www.programiz.com/python-programming/list-comprehension)
+* [Python enumerate()](https://realpython.com/python-enumerate/)
+* [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite)
 
 ### Content
 
