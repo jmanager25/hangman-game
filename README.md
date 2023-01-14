@@ -76,6 +76,14 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 
 ## Technologies Used
 
+* [Text to ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=Graceful&t=You%20Lose!)
+* Python as the main language of this project
+* Git for version control
+* GitHub to store project code
+* Heroku to host the the live project
+* [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
+* [Lucidchart - FlowChart Diagram](https://www.lucidchart.com/pages/)
+
 ## Bugs
 
 ### Fixed Bugs
