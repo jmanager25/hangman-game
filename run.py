@@ -98,7 +98,20 @@ def play_game(random_word):
         elif player_guess in random_word:
             print(f"{player_guess} is in the word")
             guessed_letters.append(player_guess)
-     
+            
+            """
+            The variable 'indices' is used to store the list of indices
+            where the letter is found. Then, the list comprehension iterates
+            through the blank_space and check if the index is in the indices 
+            list and if it is it will replace it with the letter itself. 
+            finally, it joins the list to form a string.
+            """
+            indices = [i for i, letter in enumerate(random_word) if letter ==
+            player_guess]
+            blank_space = "".join([random_word[i] if i in indices else x for i, 
+            x in enumerate(blank_space)])
+        print(hangman_draw(attempts))
+        print(blank_space)
 
 def hangman_draw(attempts):
     """
