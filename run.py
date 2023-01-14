@@ -71,13 +71,15 @@ def get_player_input(random_word, guessed_letters):
                 else: 
                     print(f"You Win! {player_guess} is the word")
                     return
-            elif player_guess in guessed_letters:
-                raise ValueError(
-                    f"You already guessed {player_guess}"
-                )
-            break
+            elif len(player_guess) == 1 and player_guess.isalpha():
+                if player_guess in guessed_letters:
+                    raise ValueError(
+                        f"You already guessed {player_guess}"
+                    )
+                elif player_guess not in random_word:
+                    print(f"{player_guess} is not in the word")
         except ValueError as e:
-            print(e)
+            print(f"{e} Try again")
     return player_guess
     
 
