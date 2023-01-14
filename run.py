@@ -55,7 +55,7 @@ def get_player_input(random_word, guessed_letters):
     the terminal and also includes a try-except statement to
     raise ValueErrors.
     """
-    while True:
+    while attempts > 0:
         player_guess = input("Please enter a letter:\n").upper()
         try:
             if not player_guess.isalpha():
@@ -90,11 +90,9 @@ def play_game(random_word):
     guessed_letters = []
     attempts = 6 
     while attempts > 0:
-        print("Attempts left: ", attempts)
-        print("Guessed letters: ", guessed_letters)
-        guessed_letters.append(player_guess)
+        print(hangman_draw(attempts))
         print("Word: ", blank_space)
-
+    player_guess = get_player_input(random_word, guessed_letters)
     if player_guess in random_word:
         new_blank_space = ""
         for i in range(len(random_word)):
@@ -103,8 +101,12 @@ def play_game(random_word):
             else:
                 new_blank_space += blank_space[i]
         blank_space = new_blank_space
+        if "_" not in blank_space:
+            print("Congratulations, YOU WIN!")
     else:
-        attempts -= 1 
+        attempts -= 1
+        hangman_draw(attempts)
+    print("You lose!")
     return attempts
 
 
@@ -179,7 +181,6 @@ def main():
     start_game()
     get_words()
     game_logic = play_game(get_words())
-    player_guess = get_player_input(get_words(), game_logic)
     hangman_draw(game_logic)
 
 
