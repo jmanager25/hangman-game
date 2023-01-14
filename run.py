@@ -1,20 +1,7 @@
 import random
 import os
 from time import sleep
-
-# Words to guess
-"""
-words = [
-    "abruptly", "absurd", "lengths", "luxury", "avenue", "transcript",
-    "transplant",
-    "nightclub", "nowadays", "unknown", "nowadays", "oxygen", "pneumonia", 
-    "gossip",
-    "jackpot", "buffalo", "espionage", "strength", "scratch", "jigsaw", 
-    "zombie",
-    "duplex", "duplex"
-]
-"""
-words = ["Hello"]
+from words import words
 
 
 def clear_terminal():
@@ -48,7 +35,7 @@ def start_game():
             print(
                 f"""\nHi there {player_name}! in this classic word guessing 
 game, you will try to guess a secret word by inputing letters 
-or word. You have 6 attempts to try to find the correct word.\n
+or word. You have 7 attempts to try to find the correct word.\n
 Are you ready to put your vocabulary and problem solving skills
 to the test? Let's get started!\n
                 """
