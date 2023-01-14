@@ -61,7 +61,7 @@ def get_player_input(random_word, guessed_letters):
             if not player_guess.isalpha():
                 raise ValueError(
                     f"""please enter a valid letter, you have
-                    entered {player_guess}"""
+                entered {player_guess}"""
                 )
             elif len(player_guess) > 1:
                 if player_guess != random_word:
@@ -89,24 +89,25 @@ def play_game(random_word):
     blank_space = "_" * len(random_word)
     guessed_letters = []
     attempts = 6 
-    if attempts > 0:
+    while attempts > 0:
         print(hangman_draw(attempts))
         print("Word: ", blank_space)
-    player_guess = get_player_input(random_word, guessed_letters)
-    if player_guess in random_word:
-        new_blank_space = ""
-        for i in range(len(random_word)):
-            if random_word[i] == player_guess:
-                new_blank_space += blank_space
-            else:
-                new_blank_space += blank_space[i]
-        blank_space = new_blank_space
-        if "_" not in blank_space:
-            print("Congratulations, YOU WIN!")
-    else:
-        attempts -= 1
-        hangman_draw(attempts)
-    return attempts
+        player_guess = get_player_input(random_word, guessed_letters)
+        if player_guess in random_word:
+            new_blank_space = ""
+            for i in range(len(random_word)):
+                if random_word[i] == player_guess:
+                    new_blank_space += blank_space
+                else:
+                    new_blank_space += blank_space[i]
+            blank_space = new_blank_space
+            if "_" not in blank_space:
+                print("Congratulations, YOU WIN!")
+        else:
+            attempts -= 1
+            hangman_draw(attempts)
+        print("You lose!")
+        return attempts
 
 
 def hangman_draw(attempts):
