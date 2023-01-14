@@ -119,6 +119,22 @@ def play_game(random_word, player_Name):
     if attempts == 0:
         print(f"Sorry {player_Name}, YOU LOSE!")
 
+
+def play_again(random_word, player_Name):
+    """
+    Gives the player the option to play Again. If they chose yes, restarts 
+    the game if not exit the game.
+    """
+    while True:
+        restart_game = input("Do you want to play Again? (y/n\n").lower()
+        if restart_game == "y":
+            play_game(random_word, player_Name)
+        elif restart_game == 'n':
+            return 
+        else:
+            print("Please enter 'y' for yes or 'n' for no") 
+
+
 def hangman_draw(attempts):
     """
     Draws the hangman graphics to be displayed if the
@@ -198,6 +214,7 @@ def main():
     player_name = start_game()
     ramdom_words = get_words()
     play_game(ramdom_words, player_name)
+    play_again(ramdom_words, player_name)
 
 
 main()
