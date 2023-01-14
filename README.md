@@ -70,6 +70,7 @@ Overall, The users wants a fun and enjoyable game that can provide entertainment
 * [Python list comprehension](https://www.programiz.com/python-programming/list-comprehension)
 * [Python enumerate()](https://realpython.com/python-enumerate/)
 * [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite)
+* [Clear the terminal](https://www.scaler.com/topics/how-to-clear-screen-in-python/)
 
 ### Content
 
