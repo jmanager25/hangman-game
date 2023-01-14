@@ -1,4 +1,6 @@
 import random
+import os
+from time import sleep
 
 # Words to guess
 """
