@@ -9,7 +9,7 @@ def clear_terminal():
     """
     Clears the terminal
     """
-    if (os.name == "posix"):
+    if os.name == "posix":
         os.system("clear")
     else:
         os.system("cls")
@@ -24,30 +24,26 @@ def start_game():
     clear_terminal()
     print("WELCOME TO THE HANGMAN GAME!\n")
 
-    player_name = ""
-
     while True:
         player_name = input("Please enter your name:\n")
-
         if not player_name.isalpha():
             print("Your name must contain only letters\n")
             continue
         else:
             print(
                 f"""\nHi there {player_name}! in this classic word guessing 
-game, you will try to guess a secret word by inputing letters 
+game, you will try to guess a secret word by inputting letters 
 or word. You have 7 attempts to try to find the correct word.\n
 Are you ready to put your vocabulary and problem solving skills
 to the test? Let's get started!\n
                 """
                 )
-        
         return player_name
 
 
 def get_words():
     """
-    Selects a ramdom word from the list of words provided.
+    Selects a random word from the list of words provided.
     The words are returned in uppercase.
     """
     random_word = random.choice(words)
@@ -80,7 +76,7 @@ def get_player_input(guessed_letters, guessed_words):
             print(f"{e} Try again")
     
 
-def play_game(random_word, player_Name):
+def play_game(random_word, player_name):
     """
     Executes the main logic of the game. checks if the player's
     input is in the secret word or not.
@@ -109,11 +105,11 @@ def play_game(random_word, player_Name):
             finally, it joins the list to form a string.
             """
             indices = [i for i, letter in enumerate(random_word) if letter ==
-            player_guess]
+                       player_guess]
             blank_space = "".join([random_word[i] if i in indices else x for i, 
-            x in enumerate(blank_space)])
+                                  x in enumerate(blank_space)])
             if "_" not in blank_space:
-                print(f"Congratulations {player_Name}, YOU WIN!")
+                print(f"Congratulations {player_name}, YOU WIN!")
                 art.you_win()
                 break
         elif len(player_guess) > 1:
@@ -130,11 +126,11 @@ def play_game(random_word, player_Name):
         print(hangman_draw(attempts))
         print(blank_space)
     if attempts == 0:
-        print(f"Sorry {player_Name}, YOU LOSE!")
+        print(f"Sorry {player_name}, YOU LOSE!")
         art.you_lose()
         
 
-def play_again(random_word, player_Name):
+def play_again(random_word, player_name):
     """
     Gives the player the option to play Again. If they chose yes, restarts 
     the game if not exit the game.
@@ -144,7 +140,7 @@ def play_again(random_word, player_Name):
     while True:
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
-            play_game(random_word, player_Name)
+            play_game(random_word, player_name)
         elif restart_game == 'n':
             return 
         else:
@@ -228,9 +224,9 @@ def main():
     """  
     art.introduction_art()
     player_name = start_game()
-    ramdom_words = get_words()
-    play_game(ramdom_words, player_name)
-    play_again(ramdom_words, player_name)
+    random_words = get_words()
+    play_game(random_words, player_name)
+    play_again(random_words, player_name)
 
 
 main()
