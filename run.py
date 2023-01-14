@@ -77,7 +77,7 @@ def get_player_input(guessed_letters, guessed_words):
             print(f"{e} Try again")
     
 
-def play_game(random_word):
+def play_game(random_word, player_Name):
     """
     Executes the main logic of the game. checks if the player's
     input is in the secret word or not.
@@ -98,7 +98,7 @@ def play_game(random_word):
         elif player_guess in random_word:
             print(f"{player_guess} is in the word")
             guessed_letters.append(player_guess)
-            
+
             """
             The variable 'indices' is used to store the list of indices
             where the letter is found. Then, the list comprehension iterates
@@ -110,8 +110,13 @@ def play_game(random_word):
             player_guess]
             blank_space = "".join([random_word[i] if i in indices else x for i, 
             x in enumerate(blank_space)])
+            if "_" not in blank_space:
+                game_over = True
+                print(f"Congratulations {player_Name}, YOU WIN!")
+                break
         print(hangman_draw(attempts))
         print(blank_space)
+
 
 def hangman_draw(attempts):
     """
@@ -181,9 +186,9 @@ def main():
     """
     Contains all the functions of the game
     """  
-    start_game()
+    player_name = start_game()
     ramdom_words = get_words()
-    play_game(ramdom_words)
+    play_game(ramdom_words, player_name)
 
 
 main()
