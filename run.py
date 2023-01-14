@@ -32,6 +32,8 @@ def start_game():
     Welcomes the player to the game, and asks them to
     input their name.
     """
+    sleep(5)
+    clear_terminal()
     print("WELCOME TO THE HANGMAN GAME!\n")
 
     player_name = ""
@@ -229,10 +231,40 @@ def hangman_draw(attempts):
         print("||                ")
 
 
+def introduction_art():
+    """
+    Display the welcome art
+    """
+    print(
+        """
+ _  _  ____  __     ___  __   _  _  ____ 
+/ )( \(  __)(  )   / __)/  \ ( \/ )(  __)
+\ /\ / ) _) / (_/\( (__(  O )/ \/ \ ) _) 
+(_/\_)(____)\____/ \___)\__/ \_)(_/(____)
+
+ ____  __     ____  _  _  ____       
+(_  _)/  \   (_  _)/ )( \(  __)      
+  )( (  O )    )(  ) __ ( ) _)       
+ (__) \__/    (__) \_)(_/(____)  
+
+ _  _   __   __ _   ___  _  _   __   __ _ 
+/ )( \ / _\ (  ( \ / __)( \/ ) / _\ (  ( \
+) __ (/    \/    /( (_ \/ \/ \/    \/    /
+\_)(_/\_/\_/\_)__) \___/\_)(_/\_/\_/\_)__)
+
+  ___   __   _  _  ____ 
+ / __) / _\ ( \/ )(  __)
+( (_ \/    \/ \/ \ ) _) 
+ \___/\_/\_/\_)(_/(____)
+        """
+        )
+
+
 def main():
     """
     Contains all the functions of the game
     """  
+    introduction_art()
     player_name = start_game()
     ramdom_words = get_words()
     play_game(ramdom_words, player_name)
