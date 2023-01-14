@@ -116,7 +116,8 @@ def play_game(random_word, player_Name):
                 break
         print(hangman_draw(attempts))
         print(blank_space)
-
+    if attempts == 0:
+        print(f"Sorry {player_Name}, YOU LOSE!")
 
 def hangman_draw(attempts):
     """
@@ -144,6 +145,14 @@ def hangman_draw(attempts):
         print("||       |        ")
         print("||       0        ")
         print("||                ")
+        print("||                ")
+        print("||                ")
+        print("||                ")
+    elif attempts == 3:
+        print(" ==========       ")
+        print("||       |        ")
+        print("||       0        ")
+        print("||      /|        ")
         print("||                ")
         print("||                ")
         print("||                ")
