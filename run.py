@@ -105,7 +105,7 @@ def play_game(random_word, player_name):
             finally, it joins the list to form a string.
             """
             indices = [i for i, letter in enumerate(random_word) if letter ==
-                       player_guess]
+                       player_guess] 
             blank_space = "".join([random_word[i] if i in indices else x for i, 
                                   x in enumerate(blank_space)])
             if "_" not in blank_space:
