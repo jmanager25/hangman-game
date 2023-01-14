@@ -51,7 +51,7 @@ def get_words():
     return random_word.upper()
 
 
-def get_player_input():
+def get_player_input(guessed_letters, guessed_words):
     """
     Allows the player to input the letter or word into
     the terminal and also includes a try-except statement to
@@ -86,26 +86,19 @@ def play_game(random_word):
     guessed_letters = []
     guessed_words = []
     attempts = 6 
+    game_over = False
+    print(hangman_draw(attempts))
+    print("Word: ", blank_space)
     while attempts > 0:
-        print(hangman_draw(attempts))
-        print("Word: ", blank_space)
-        player_guess = get_player_input(random_word, guessed_letters)
-        if player_guess in random_word:
-            new_blank_space = ""
-            for i in range(len(random_word)):
-                if random_word[i] == player_guess:
-                    new_blank_space += blank_space
-                else:
-                    new_blank_space += blank_space[i]
-            blank_space = new_blank_space
-            if "_" not in blank_space:
-                print("Congratulations, YOU WIN!")
-        else:
+        player_guess = get_player_input(guessed_letters, guessed_words)
+        if player_guess not in random_word:
+            print(f"{player_guess} is not in the word")
             attempts -= 1
-            hangman_draw(attempts)
-    print("You lose!")
-    return attempts
-
+            guessed_letters.append(player_guess)
+        elif player_guess in random_word:
+            print(f"{player_guess} is in the word")
+            guessed_letters.append(player_guess)
+     
 
 def hangman_draw(attempts):
     """
@@ -176,8 +169,8 @@ def main():
     Contains all the functions of the game
     """  
     start_game()
-    get_words()
-    game_logic = play_game(get_words())
+    ramdom_words = get_words()
+    play_game(ramdom_words)
 
 
 main()
