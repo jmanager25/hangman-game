@@ -1,6 +1,7 @@
 import random
 
 # Words to guess
+"""
 words = [
     "abruptly", "absurd", "lengths", "luxury", "avenue", "transcript",
     "transplant",
@@ -10,7 +11,8 @@ words = [
     "zombie",
     "duplex", "duplex"
 ]
-
+"""
+words = ["Hello"]
 
 def start_game():
     """
@@ -49,7 +51,7 @@ def get_words():
     return random_word.upper()
 
 
-def get_player_input(random_word, guessed_letters):
+def get_player_input():
     """
     Allows the player to input the letter or word into
     the terminal and also includes a try-except statement to
@@ -60,27 +62,19 @@ def get_player_input(random_word, guessed_letters):
         try:
             if not player_guess.isalpha():
                 raise ValueError(
-                    f"""please enter a valid letter, you have
-                entered {player_guess}"""
+                    f"""Enter a valid letter, {player_guess} is not a letter"""
                 )
-            elif len(player_guess) > 1:
-                if player_guess != random_word:
-                    raise ValueError(
-                        f"""Wrong word, {player_guess} is not the word"""
-                    )
-                else: 
-                    print(f"You Win! {player_guess} is the word")
-                    return
-            elif len(player_guess) == 1 and player_guess.isalpha():
-                if player_guess in guessed_letters:
-                    raise ValueError(
-                        f"You already guessed {player_guess}"
-                    )
-                elif player_guess not in random_word:
-                    print(f"{player_guess} is not in the word")
+            elif len(player_guess) > 1 and player_guess in guessed_words:
+                raise ValueError(
+                    f"You already guessed {player_guess}"
+                )                
+            elif len(player_guess) == 1 and player_guess in guessed_letters:
+                raise ValueError(
+                    f"You already guessed {player_guess}"
+                )
+            return player_guess
         except ValueError as e:
             print(f"{e} Try again")
-    return player_guess
     
 
 def play_game(random_word):
@@ -90,6 +84,7 @@ def play_game(random_word):
     """
     blank_space = "_" * len(random_word)
     guessed_letters = []
+    guessed_words = []
     attempts = 6 
     while attempts > 0:
         print(hangman_draw(attempts))
@@ -108,8 +103,8 @@ def play_game(random_word):
         else:
             attempts -= 1
             hangman_draw(attempts)
-        print("You lose!")
-        return attempts
+    print("You lose!")
+    return attempts
 
 
 def hangman_draw(attempts):
