@@ -16,6 +16,17 @@ words = [
 """
 words = ["Hello"]
 
+
+def clear_terminal():
+    """
+    Clears the terminal
+    """
+    if (os.name == "posix"):
+        os.system("clear")
+    else:
+        os.system("cls")
+
+
 def start_game():
     """
     Welcomes the player to the game, and asks them to
