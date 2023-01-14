@@ -106,7 +106,6 @@ def play_game(random_word):
     else:
         attempts -= 1
         hangman_draw(attempts)
-    print("You lose!")
     return attempts
 
 
@@ -115,7 +114,7 @@ def hangman_draw(attempts):
     Draws the hangman graphics to be displayed if the
     player guess wrong the letter or word.
     """
-    if attempts == 0:
+    if attempts == 6:
         print(" ==========       ")
         print("||                ")
         print("||                ")
@@ -123,7 +122,7 @@ def hangman_draw(attempts):
         print("||                ")
         print("||                ")
         print("||                ")
-    elif attempts == 1:
+    elif attempts == 5:
         print(" ==========       ")
         print("||       |        ")
         print("||                ")
@@ -131,7 +130,7 @@ def hangman_draw(attempts):
         print("||                ")
         print("||                ")
         print("||                ")
-    elif attempts == 2:
+    elif attempts == 4:
         print(" ==========       ")
         print("||       |        ")
         print("||       0        ")
@@ -147,7 +146,7 @@ def hangman_draw(attempts):
         print("||                ")
         print("||                ")
         print("||                ")
-    elif attempts == 4:
+    elif attempts == 2:
         print(" =========        ")
         print("||       |        ")
         print("||       0        ")
@@ -155,7 +154,7 @@ def hangman_draw(attempts):
         print("||                ")
         print("||                ")
         print("||                ")
-    elif attempts == 5:
+    elif attempts == 1:
         print(" ==========       ")
         print("||       |        ")
         print("||       0        ")
@@ -163,7 +162,7 @@ def hangman_draw(attempts):
         print("||      /         ")
         print("||                ")
         print("||                ")
-    elif attempts == 6:
+    elif attempts == 0:
         print(" ==========       ")
         print("||       |        ")
         print("||       0        ")
