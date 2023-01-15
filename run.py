@@ -31,11 +31,14 @@ def start_game():
             continue
         else:
             print(
-                f"""\nHi there {player_name}! in this classic word guessing 
-game, you will try to guess a secret word by inputting letters 
-or words. You have 7 attempts to try to find the correct word.\n
-Are you ready to put your vocabulary and problem solving skills
-to the test? Let's get started!\n
+                f"""
+                Hi there {player_name}! Welcome to the classic word guessing
+                game! You will try to guess a secret word by inputting letters 
+                or words. Be careful, as you only have 7 wrong attempts before 
+                the man is hanged.\n
+                Are you ready to put your vocabulary and problem solving skills
+                to the test? Let's get started!
+                Good luck!\n
                 """
                 )
         return player_name
