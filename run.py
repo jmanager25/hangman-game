@@ -138,7 +138,9 @@ def play_game(random_word, player_name):
         sleep(2)
         clear_terminal()
         art.hangman_art()
+        print("Guessed letters: ", guessed_letters)
         print(hangman_draw(attempts))
+        print("Attempts left: ", attempts)
         print("Word: ", blank_space)
     if attempts == 0:
         print(f"Sorry {player_name}, {random_word} is the word, YOU LOSE!")
