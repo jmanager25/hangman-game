@@ -47,7 +47,7 @@ def start_game():
 def get_words():
     """
     Selects a random word from the list of words provided.
-    The words are returned in uppercase.
+    The word is returned in uppercase.
     """
     random_word = random.choice(words)
     return random_word.upper()
@@ -75,8 +75,8 @@ def get_player_input(guessed_letters, guessed_words):
                     f"You already guessed {player_guess}"
                 )
             return player_guess
-        except ValueError as e:
-            print(f"{e} Try again")
+        except ValueError as err:
+            print(f"{err} Try again")
     
 
 def play_game(random_word, player_name):
