@@ -51,11 +51,11 @@ If the player enters an invalid character, an error message is displayed and the
 
 #### User Goals 
 
-* The users wants a classic and simple game that is easy to learn and quick to play.
-* The users wants a fun way to pass the time and challenge themselves.
-* The users wants a game to improve their vocalurary, as they will need to think about the meaning of the words and how they are spelled in order to make correct guesses. 
+* The users want a classic and simple game that is easy to learn and quick to play.
+* The users want a fun way to pass the time and challenge themselves.
+* The users want a game to improve their vocalurary, as they will need to think about the meaning of the words and how they are spelled in order to make correct guesses. 
 
-Overall, The users wants a fun and enjoyable game that can provide entertainment and mental exercise. 
+Overall, the users want a fun and enjoyable game that can provide entertainment and mental exercise. 
 
 ### Flowchart Diagram
 
