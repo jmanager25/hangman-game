@@ -33,7 +33,7 @@ def start_game():
             print(
                 f"""\nHi there {player_name}! in this classic word guessing 
 game, you will try to guess a secret word by inputting letters 
-or word. You have 7 attempts to try to find the correct word.\n
+or words. You have 7 attempts to try to find the correct word.\n
 Are you ready to put your vocabulary and problem solving skills
 to the test? Let's get started!\n
                 """
@@ -140,7 +140,8 @@ def play_again(random_word, player_name):
     while True:
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
-            play_game(random_word, player_name)
+            random_words = get_words()
+            play_game(random_words, player_name)
         elif restart_game == 'n':
             return 
         else:
