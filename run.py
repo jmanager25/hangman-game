@@ -20,9 +20,9 @@ def start_game():
     Welcomes the player to the game, and asks them to
     input their name.
     """
-    sleep(20)
+    sleep(5)
     clear_terminal()
-    print("WELCOME TO THE HANGMAN GAME!\n")
+    art.hangman_art()
 
     while True:
         player_name = input("Please enter your name:\n")
@@ -30,6 +30,8 @@ def start_game():
             print("Your name must contain only letters\n")
             continue
         else:
+            clear_terminal()
+            art.hangman_art()
             print(
                 f"""
                 Hi there {player_name}! Welcome to the classic word guessing
@@ -135,6 +137,7 @@ def play_game(random_word, player_name):
                 break
         sleep(2)
         clear_terminal()
+        art.hangman_art()
         print(hangman_draw(attempts))
         print("Word: ", blank_space)
     if attempts == 0:
