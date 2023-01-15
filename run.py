@@ -109,7 +109,12 @@ def play_game(random_word, player_name):
             blank_space = "".join([random_word[i] if i in indices else x for i, 
                                   x in enumerate(blank_space)])
             if "_" not in blank_space:
-                print(f"Congratulations {player_name}, YOU WIN!")
+                print(
+                    f"""
+                    Congratulations {player_name}, {random_word} 
+                    is the word, YOU WIN!
+                    """
+                    )
                 art.you_win()
                 break
         elif len(player_guess) > 1:
@@ -118,15 +123,19 @@ def play_game(random_word, player_name):
                 attempts -= 1
                 guessed_words.append(player_guess)
             else:
-                print(f"Congratulations, {player_guess} is the word, YOU WIN!")
+                print(
+                    f"""
+                    Congratulations {player_name}, {player_guess} 
+                    is the word, YOU WIN!"""
+                      )
                 art.you_win()
                 break
         sleep(2)
         clear_terminal()
         print(hangman_draw(attempts))
-        print(blank_space)
+        print("Word: ", blank_space)
     if attempts == 0:
-        print(f"Sorry {player_name}, YOU LOSE!")
+        print(f"Sorry {player_name}, {random_word} is the word, YOU LOSE!")
         art.you_lose()
         
 
@@ -136,8 +145,6 @@ def play_again(random_word, player_name):
     the game if not exit the game.
     """
     while True:
-        sleep(6)
-        clear_terminal()
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
             clear_terminal()
@@ -196,7 +203,7 @@ def hangman_draw(attempts):
         print("||                ")
         print("||                ")
     elif attempts == 2:
-        print(" =========        ")
+        print(" ==========       ")
         print("||       |        ")
         print("||       0        ")
         print("||      /|\       ")
