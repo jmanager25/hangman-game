@@ -81,8 +81,12 @@ def get_player_input(guessed_letters, guessed_words):
 
 def play_game(random_word, player_name):
     """
-    Executes the main logic of the game. checks if the player's
-    input is in the secret word or not.
+    Executes the main logic of the game. Keeps track of the player's
+    attempts, guessed letters and words. Updates the hangman draw
+    in case of wrong attempts and uncover the letters in case of 
+    correct guess. It ultimatly determines if the player wins or 
+    loses based on their correct guessing of the secret word before
+    running out of attempts. 
     """
     blank_space = "_" * len(random_word)
     guessed_letters = []
@@ -99,13 +103,9 @@ def play_game(random_word, player_name):
         elif len(player_guess) == 1 and player_guess in random_word:
             print(f"{player_guess} is in the word")
             guessed_letters.append(player_guess)
-
             """
-            The variable 'indices' is used to store the list of indices
-            where the letter is found. Then, the list comprehension iterates
-            through the blank_space and check if the index is in the indices 
-            list and if it is it will replace it with the letter itself. 
-            finally, it joins the list to form a string.
+            Replaces the underscores with correctly guessed letters in
+            the word and joins them to form a string.
             """
             indices = [i for i, letter in enumerate(random_word) if letter ==
                        player_guess] 
