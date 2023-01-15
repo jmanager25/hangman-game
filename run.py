@@ -20,7 +20,7 @@ def start_game():
     Welcomes the player to the game, and asks them to
     input their name.
     """
-    sleep(5)
+    sleep(20)
     clear_terminal()
     print("WELCOME TO THE HANGMAN GAME!\n")
 
@@ -33,9 +33,9 @@ def start_game():
             print(
                 f"""
                 Hi there {player_name}! Welcome to the classic word guessing
-                game! You will try to guess a secret word by inputting letters 
-                or words. Be careful, as you only have 7 wrong attempts before 
-                the man is hanged.\n
+                game, Hangman! You will try to guess a secret word by inputting 
+                letters or words. Be careful, as you only have 7 wrong attempts 
+                before the man is hanged.\n
                 Are you ready to put your vocabulary and problem solving skills
                 to the test? Let's get started!
                 Good luck!\n
