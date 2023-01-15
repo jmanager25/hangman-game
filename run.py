@@ -135,14 +135,16 @@ def play_again(random_word, player_name):
     Gives the player the option to play Again. If they chose yes, restarts 
     the game if not exit the game.
     """
-    sleep(6)
-    clear_terminal()
     while True:
+        sleep(6)
+        clear_terminal()
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
+            clear_terminal()
             random_words = get_words()
             play_game(random_words, player_name)
         elif restart_game == 'n':
+            clear_terminal()
             return 
         else:
             print("Please enter 'y' for yes or 'n' for no") 
