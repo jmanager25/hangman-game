@@ -147,7 +147,7 @@ def play_game(random_word, player_name):
         art.you_lose()
         
 
-def play_again(random_word, player_name):
+def play_again(random_words, player_name):
     """
     Gives the player the option to play Again. If they chose yes, restarts 
     the game if not exit the game.
