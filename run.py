@@ -60,7 +60,7 @@ def get_player_input(guessed_letters, guessed_words):
     raise ValueErrors.
     """
     while True:
-        player_guess = input("Please enter a letter:\n").upper()
+        player_guess = input("\nPlease enter a letter:\n").upper()
         try:
             if not player_guess.isalpha():
                 raise ValueError(

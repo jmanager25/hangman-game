@@ -2,9 +2,9 @@
 
 Hangman Game is a guessing game written with python and that runs on a terminal. The player has to guess the word, by inputting letters or words into the terminal. However, the player is limited to 7 wrong attempts. If the player does not guess correctly the word within those attempts, the man is hung and the game is lost. 
 
-![Responsive Mockup]()
+![Responsive Mockup](assets/images/Responsive-mockup.jpeg)
 
-[Play Hangman Game]()
+[Play Hangman Game](https://game-hangman.herokuapp.com/)
 
 ## Table Of Contents 
 
