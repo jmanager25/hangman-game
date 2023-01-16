@@ -143,6 +143,8 @@ In the future i want to add the following features:
 
 ### Manual Testing
 
+I have manually tested this project and made sure that all the features worked as intended. The game operates differently on the Heroku terminal compared to the Gitpod terminal, and I have encountered several bugs during testing and some I was unable to resolve. I have listed these bugs under the "unfixed bugs" section. 
+
 ### Validator
 
 ## Technologies Used
