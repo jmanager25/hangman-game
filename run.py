@@ -131,8 +131,9 @@ def play_game(random_word, player_name):
                 print(
                     f"""
                     Congratulations {player_name}, {player_guess} 
-                    is the word, YOU WIN!"""
-                      )
+                    is the word, YOU WIN!
+                    """
+                    )
                 art.you_win()
                 break
         sleep(2)
