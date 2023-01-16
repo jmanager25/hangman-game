@@ -83,6 +83,7 @@ Overall, the users want a fun and enjoyable game that can provide entertainment 
 * Heroku to host the the live project
 * [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
 * [Lucidchart - FlowChart Diagram](https://www.lucidchart.com/pages/)
+* [Amiresponsive](https://bytes.dev/?s=amiresponsive) for responsive mockup
 
 ## Bugs
 

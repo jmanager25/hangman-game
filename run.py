@@ -26,7 +26,7 @@ def start_game():
     while True:
         player_name = input("Please enter your name:\n")
         if not player_name.isalpha():
-            print("Your name must contain only letters\n")
+            print("/nYour name must contain only letters\n")
             continue
         else:
             clear_terminal()
@@ -64,15 +64,15 @@ def get_player_input(guessed_letters, guessed_words):
         try:
             if not player_guess.isalpha():
                 raise ValueError(
-                    f"""Enter a valid letter, {player_guess} is not a letter"""
+                    f"\nEnter a valid letter, {player_guess} is not a letter"
                 )
             elif len(player_guess) > 1 and player_guess in guessed_words:
                 raise ValueError(
-                    f"You already guessed {player_guess}"
+                    f"\nYou already guessed {player_guess}"
                 )                
             elif len(player_guess) == 1 and player_guess in guessed_letters:
                 raise ValueError(
-                    f"You already guessed {player_guess}"
+                    f"\nYou already guessed {player_guess}"
                 )
             return player_guess
         except ValueError as err:
@@ -97,11 +97,11 @@ def play_game(random_word, player_name):
     while attempts > 0:
         player_guess = get_player_input(guessed_letters, guessed_words)
         if len(player_guess) == 1 and player_guess not in random_word:
-            print(f"{player_guess} is not in the word")
+            print(f"\n{player_guess} is not in the word")
             attempts -= 1
             guessed_letters.append(player_guess)
         elif len(player_guess) == 1 and player_guess in random_word:
-            print(f"{player_guess} is in the word")
+            print(f"\n{player_guess} is in the word")
             guessed_letters.append(player_guess)
             """
             Replaces the underscores with correctly guessed letters in
@@ -122,7 +122,7 @@ def play_game(random_word, player_name):
                 break
         elif len(player_guess) > 1:
             if player_guess != random_word:
-                print(f"{player_guess} is not the word")
+                print(f"\n{player_guess} is not the word")
                 attempts -= 1
                 guessed_words.append(player_guess)
             else:
@@ -136,10 +136,10 @@ def play_game(random_word, player_name):
                 break
         sleep(2)
         clear_terminal()
-        print("Guessed letters: ", guessed_letters)
-        print(hangman_draw(attempts))
-        print("Attempts left: ", attempts)
-        print("Word: ", blank_space)
+        print("Guessed letters: ", guessed_letters, "\n")
+        print(hangman_draw(attempts), "\n")
+        print("Attempts left: ", attempts, "\n")
+        print("Word: ", blank_space, "\n")
     if attempts == 0:
         print(f"\nSorry {player_name}, {random_word} was the word, YOU LOSE!")
         art.you_lose()
@@ -151,7 +151,7 @@ def play_again(random_words, player_name):
     the game if not exit the game.
     """
     while True:
-        restart_game = input("Do you want to play Again? (y/n)\n").lower()
+        restart_game = input("\nDo you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
             clear_terminal()
             art.hangman_art()
@@ -161,7 +161,7 @@ def play_again(random_words, player_name):
             clear_terminal()
             return 
         else:
-            print("Please enter 'y' for yes or 'n' for no") 
+            print("\nPlease enter 'y' for yes or 'n' for no") 
 
 
 def hangman_draw(attempts):
