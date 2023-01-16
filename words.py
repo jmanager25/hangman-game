@@ -1,10 +1,10 @@
 # Words to guess
 words = [
-    "point", 
-    "zip", 
-    "toothbrush", 
-    "lying", 
-    "agreeable", 
+    "point",
+    "zip",
+    "toothbrush",
+    "lying",
+    "agreeable",
     "obtainable",
     "steam",
     "request",

@@ -147,6 +147,10 @@ I have manually tested this project and made sure that all the features worked a
 
 ### Validator
 
+Tested the code through CI Python Linter and fixed any errors. The art.py file generated several "invalid escape sequence" and "trailing whitespace" warnings, however, it is not possible to resolve these warnings without altering the appearance of the artwork. As the artwork is not critical to the main functionality of the code, I have placed them in a separate file.
+
+![Validator](assets/images/validator.png)
+
 ## Technologies Used
 
 * [Text to ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=Graceful&t=You%20Lose!)
@@ -175,6 +179,7 @@ I have manually tested this project and made sure that all the features worked a
 * [Python enumerate()](https://realpython.com/python-enumerate/)
 * [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite)
 * [Clear the terminal](https://www.scaler.com/topics/how-to-clear-screen-in-python/)
+* [How to fix “invalid escape sequence”](https://adamj.eu/tech/2022/11/04/why-does-python-deprecationwarning-invalid-escape-sequence/)
 
 ### Content
 * [Words](https://www.randomlists.com/random-words?dup=false&qty=50)
