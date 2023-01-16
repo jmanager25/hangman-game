@@ -93,7 +93,8 @@ def play_game(random_word, player_name):
     guessed_words = []
     attempts = 7 
     print(hangman_draw(attempts))
-    print("Word: ", blank_space)
+    print(f"\n{len(random_word)} letter Word: ")
+    print(blank_space)
     while attempts > 0:
         player_guess = get_player_input(guessed_letters, guessed_words)
         if len(player_guess) == 1 and player_guess not in random_word:
@@ -139,7 +140,8 @@ def play_game(random_word, player_name):
         print("Guessed letters: ", guessed_letters, "\n")
         print(hangman_draw(attempts), "\n")
         print("Attempts left: ", attempts, "\n")
-        print("Word: ", blank_space, "\n")
+        print(f"\n{len(random_word)} letter Word:\n")
+        print(blank_space)
     if attempts == 0:
         print(f"\nSorry {player_name}, {random_word} was the word, YOU LOSE!")
         art.you_lose()
