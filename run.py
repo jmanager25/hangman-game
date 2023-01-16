@@ -23,7 +23,6 @@ def start_game():
     sleep(5)
     clear_terminal()
     art.hangman_art()
-
     while True:
         player_name = input("Please enter your name:\n")
         if not player_name.isalpha():
@@ -31,7 +30,6 @@ def start_game():
             continue
         else:
             clear_terminal()
-            art.hangman_art()
             print(
                 f"""
                 Hi there {player_name}! Welcome to the classic word guessing
@@ -138,7 +136,6 @@ def play_game(random_word, player_name):
                 break
         sleep(2)
         clear_terminal()
-        art.hangman_art()
         print("Guessed letters: ", guessed_letters)
         print(hangman_draw(attempts))
         print("Attempts left: ", attempts)
