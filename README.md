@@ -66,6 +66,70 @@ Overall, the users want a fun and enjoyable game that can provide entertainment 
 
 ### Existing Features
 
+#### Welcome Art
+
+* Display an art with the messsage "Welcome to the Hangman Game".
+
+![Welcome art](assets/images/Welcome-message.jpg)
+
+#### Get Player Name
+
+* Get the name of the player.
+
+![Get player name](assets/images/name-request.png)
+
+### Rules
+
+* Welcomes the player to the game and shows the rules.
+
+![Rules](assets/images/rules.png)
+
+### Game Area
+
+* The main area of the game. It displays:
+    * guessed letters
+    * Hangman draw
+    * Attempts left
+    * The length of the word
+    * The blank space where the word is hidden
+    * Input field
+
+![Game area](assets/images/game-area.png)
+
+### Error Messages
+
+* Displays ValueError if the player:
+    * Enters invalid input.
+    * Enters an already guessed letter.
+    * Enters an already guessed word.
+
+![Error message](assets/images/error-message.png)
+![Error message](assets/images/error-message1.png)
+
+### Feedback
+
+* Gives feedback to the player if:
+    * The letter is in the word.
+    * The letter is not in the word.
+    * The word is not the correct word.
+
+![Is in the word](assets/images/in-the-word.png)
+![Is not in the word](assets/images/not-in-the-word.png)
+![Word is not correct](assets/images/not-the-word.png)
+
+### Win and Lose Art
+
+* Displays the "you win" art if the player correctly guesses the word, and "you lose" if the player runs out of attempts.
+
+![You win](assets/images/you-win.png)
+![You Lose](assets/images/you-lose.png)
+
+### Play Again
+
+* Gives the player the option to play again.
+
+![Play again](assets/images/play-again.png)
+
 ### Future Features
 
 ## Testing

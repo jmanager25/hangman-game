@@ -64,15 +64,15 @@ def get_player_input(guessed_letters, guessed_words):
         try:
             if not player_guess.isalpha():
                 raise ValueError(
-                    f"\nEnter a valid letter, {player_guess} is not a letter"
+                    f"\nEnter a valid letter, {player_guess} is not a letter."
                 )
             elif len(player_guess) > 1 and player_guess in guessed_words:
                 raise ValueError(
-                    f"\nYou already guessed {player_guess}"
+                    f"\nYou already guessed {player_guess}."
                 )                
             elif len(player_guess) == 1 and player_guess in guessed_letters:
                 raise ValueError(
-                    f"\nYou already guessed {player_guess}"
+                    f"\nYou already guessed {player_guess}."
                 )
             return player_guess
         except ValueError as err:
@@ -139,7 +139,7 @@ def play_game(random_word, player_name):
         clear_terminal()
         print("Guessed letters: ", guessed_letters, "\n")
         print(hangman_draw(attempts), "\n")
-        print("Attempts left: ", attempts, "\n")
+        print("Attempts left: ", attempts)
         print(f"\n{len(random_word)} letter Word:\n")
         print(blank_space)
     if attempts == 0:
