@@ -143,7 +143,7 @@ def play_game(random_word, player_name):
         print("Attempts left: ", attempts)
         print("Word: ", blank_space)
     if attempts == 0:
-        print(f"Sorry {player_name}, {random_word} is the word, YOU LOSE!")
+        print(f"\nSorry {player_name}, {random_word} was the word, YOU LOSE!")
         art.you_lose()
         
 
@@ -156,6 +156,7 @@ def play_again(random_word, player_name):
         restart_game = input("Do you want to play Again? (y/n)\n").lower()
         if restart_game == "y":
             clear_terminal()
+            art.hangman_art()
             random_words = get_words()
             play_game(random_words, player_name)
         elif restart_game == 'n':

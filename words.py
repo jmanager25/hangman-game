@@ -5,7 +5,7 @@ words = [
     "toothbrush", 
     "lying", 
     "agreeable", 
-    "obtainable"
+    "obtainable",
     "steam",
     "request",
     "nutty",
@@ -49,5 +49,5 @@ words = [
     "labored",
     "waves",
     "rest",
-    "ocean"
+    "ocean",
 ]
