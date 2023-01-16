@@ -87,7 +87,7 @@ Overall, the users want a fun and enjoyable game that can provide entertainment 
 ### Game Area
 
 * The main area of the game. It displays:
-    * guessed letters
+    * Guessed letters
     * Hangman draw
     * Attempts left
     * The length of the word
@@ -131,6 +131,13 @@ Overall, the users want a fun and enjoyable game that can provide entertainment 
 ![Play again](assets/images/play-again.png)
 
 ### Future Features
+
+In the future i want to add the following features:
+
+* Scoring system.
+* Top high Scores. 
+* A game menu.
+* Dificulty levels
 
 ## Testing
 
