@@ -161,14 +161,29 @@ Tested the code through CI Python Linter and fixed any errors. The art.py file g
 * [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
 * [Lucidchart - FlowChart Diagram](https://www.lucidchart.com/pages/)
 * [Amiresponsive](https://bytes.dev/?s=amiresponsive) for responsive mockup
+* [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 ## Bugs
 
 ### Fixed Bugs
 
+During the development of this project I have encountered and fixed the following bugs:
+
+* When the player is asked if they would like to play again, if they choose to do so, the game would continue using the same secret word that was used in the previous round.
+    * Fix: Added the function that gets random words to the function that handles the play again functionality.
+* When guessing the word incorrectly, the hangman drawing was displaying the full hagman even though the game was not over. 
+    * Fix: I had to reverse the order of attempts from 7 to 0 so that the drawing would progress correctly with each incorrect guess.
+* On the Heroku terminal, the spaces to hold the secret word would appear as a continuous line instead of separated underscores. This made it difficult for the player to determine the number of letters in the word.
+    * Fix: I added a print statement that displays the number of letters in the word to the player.
+
 ### Unfixed Bugs
 
-## Deployment
+* On the Heroku app, the terminal was not clearing properly and pieces of the previous game were appearing at the top of the screen. This bug did not occur on the gitpod terminal where the game was developed, but only on the Heroku terminal. I did not have enough time to fix this issue but i plan to address it in my next update.
+
+![Heroku bug](assets/images/heroku-bug.png)
+![Heroku bug](assets/images/heroku-bug1.png)
+
+## Deployment!
 
 ## Credits
 
