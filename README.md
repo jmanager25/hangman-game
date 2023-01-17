@@ -183,7 +183,26 @@ During the development of this project I have encountered and fixed the followin
 ![Heroku bug](assets/images/heroku-bug.png)
 ![Heroku bug](assets/images/heroku-bug1.png)
 
-## Deployment!
+## Deployment
+
+The Hangman game was deployed using Heroku. The steps used are the following:
+
+1. Login to Heroku account.
+2. Click "create new app" button on Heroku dashboard.
+3. Enter the app name and select your region.
+4. Click "creat app".
+5. Head to settings tab.
+6. On Config Vars section click "reveal config var".
+7. Add key (PORT) and value (8000) and then click "add".
+8. On Buildpack section click "Add buildpack"
+9. Select python and click "save changes". Repeat the same for Nodejs.
+10. Head to Deplaoy tab.
+11. On deployment method section, select GitHub.
+12. Connect to your Github account.
+13. Enter the project name you wish to deploy, click "search" and when the project name appears, click "connect".
+14. On automatic deploys section click "Enable automatic deploys".
+15. On manual deploys click "Deploy branch".
+16. You will get a message that your app was succesfully deployed and a view button to see the live app.
 
 ## Credits
 
@@ -199,10 +218,15 @@ During the development of this project I have encountered and fixed the followin
 ### Content
 * [Words](https://www.randomlists.com/random-words?dup=false&qty=50)
 
-### Media 
-
 ## Acknowledgments
 
+I would like to thank the following people:
+
+* My girlfriend for her patience and support while I was working on the project
+
+* My mentor, Mitko, for his guidance throughout the project
+
+* My collegues from code institute for the support and motivation on Slack
 
 
 
