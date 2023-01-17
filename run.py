@@ -26,7 +26,7 @@ def start_game():
     while True:
         player_name = input("Please enter your name:\n")
         if not player_name.isalpha():
-            print("/nYour name must contain only letters\n")
+            print("Your name must contain only letters\n")
             continue
         else:
             clear_terminal()
