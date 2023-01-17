@@ -34,7 +34,6 @@ Hangman Game is a guessing game written with python and that runs on a terminal.
 * [Credits](#credits)
     * [Code Used](#code-used)
     * [Content](#content)
-    * [Media](#media)
 
 * [Acknowledgments](#acknowledgments)
 
